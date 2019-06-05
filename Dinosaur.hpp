@@ -5,17 +5,19 @@
 ** Description:    Header file for the Dinosaur class derived from space
 ***********************************************************************/
 
-#ifndef START_HPP
-#define START_HPP  
+#ifndef DINOSAUR_HPP
+#define DINOSAUR_HPP  
 
 #include "Space.hpp"
 
 
 class Dinosaur : public Space
 {
+private:
+
+
 public:
     Dinosaur();
-
-
+    void printImg() override;
 };
 #endif

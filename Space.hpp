@@ -17,8 +17,10 @@ using std::string;
 
 class Space
 {
+private:
 
-
-
+public:
+    Space();
+    virtual void printImg() = 0;
 };
 #endif

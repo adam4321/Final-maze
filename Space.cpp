@@ -12,3 +12,7 @@
 ** Description:   Constructor function for the 
 *********************************************************************/
 
+Space::Space()
+{
+    
+}
