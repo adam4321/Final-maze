@@ -16,9 +16,6 @@ Start::Start()
 {
 
 
-
-
-
 }
 
 
@@ -30,12 +27,10 @@ Start::Start()
 void Start::printImg()
 {
 
-
-
 cout << R"(
 +------------------------------------+ 
 |#####|WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW| 
-|#####|<(        HOME ROOM         )>| 
+|#####|<(       HOME ROOM          )>| 
 |#####|WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW| 
 |#####|WWWWWWWWWW.----.WWWWWWWWWWWWWW| 
 |#####|WWWWWWWW,'  ||  `.WWWWWWWWWWWW| 
@@ -57,7 +52,8 @@ cout << R"(
 +------------------------------------+ 
 
 ~.:.~.:.~.:.~.:.~.:.~.:.~.:.~.:.~.:.~.:.~.:.<>.:.~.:.~.:.~.:.
+
+
+
 )";
-
-
 }

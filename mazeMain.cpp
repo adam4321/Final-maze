@@ -126,7 +126,7 @@ int main()
 
         if (menuChoice == 1)
         {
-
+            cout << ".........................................................................." << endl;
             cout << "**************************************************************************";
             cout << endl << endl;
             cout << "I'm afraid that you are a rat!!!" << endl;
@@ -162,9 +162,16 @@ int main()
             player.printHealth();
 
             key->printImg();
+            player.printHealth();
+            
             dinosaur->printImg();
+            player.printHealth();
+
             door->printImg();
+            player.printHealth();
+
             finish->printImg();
+            player.printHealth();
 
 
             // free the heap memory
