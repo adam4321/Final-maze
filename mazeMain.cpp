@@ -2,7 +2,11 @@
 ** Program name:   Maze Game
 ** Author:         Adam Wright
 ** Date:           5/30/2019
-** Description:    Console game that 
+** Description:    Single player console game where the player is a rat
+**                 in a maze. The player needs to escape the maze before
+**                 they die from running out of health (cheese). The 
+**                 program can be run by typing maze into the command 
+**                 line and following the prompts.
 ***********************************************************************/
 
 #include <iostream>
@@ -29,17 +33,17 @@ int main()
     bool onlyNumbers = false;
     int gameMenu = 0;
 
+
+    // Do While loop to allow restarting 
+
     do
     {
         Character player;
-
-    	// Do While loop to allow restarting 
 
         /*********************************************************************
         ** Description:   Rat ascii art from 
         **        https://asciiart.website/index.php?art=animals/rodents/other
         *********************************************************************/
-        
 
         cout << R"(
     ######################################################################
@@ -60,7 +64,7 @@ int main()
 
 
         cout << R"(
-                          **********************
+                          
                           **  The Rat's Maze  **
                           **********************
                                ***********
@@ -99,26 +103,37 @@ int main()
         if (menuChoice == 1)
         {
 
-
-
-
-        player.printHealth();
-
-        onlyNumbers = false;
-        gameMenu = 0;
-
-        while (onlyNumbers == false || gameMenu != 1 && gameMenu != 2 && gameMenu != 3 && gameMenu != 4)
-        {
-            cout << "Press 1 to move UP" << endl;
-            cout << "Press 2 to move RIGHT" << endl;
-            cout << "Press 3 to move DOWN" << endl;
-            cout << "Press 4 to move LEFT" << endl;
+            cout << "**************************************************************************";
             cout << endl << endl;
-            cin >> menuInputTest;
-            onlyNumbers = requireNumbers(menuInputTest);
-            gameMenu = atoi(menuInputTest.c_str());
-            cout << endl;
+            cout << "I'm afraid that you are a rat!!!" << endl;
+            cout << "You have been dropped into a room in a maze!";
+            cout << endl << endl << endl;
+            cout << "Your goal is to move from room to room and escape" << endl;
+            cout << "before your Cheese-O-Meter runs out and you die...";
+            cout << endl << endl << endl;
+
+
+            // Print the "cheese" health meter and first menu
+
+            player.printHealth();
+
+            onlyNumbers = false;
+            gameMenu = 0;
+
+            while (onlyNumbers == false || gameMenu != 1 && gameMenu != 2 && gameMenu != 3 && gameMenu != 4)
+            {
+                cout << "Press 1 to move UP" << endl;
+                cout << "Press 2 to move RIGHT" << endl;
+                cout << "Press 3 to move DOWN" << endl;
+                cout << "Press 4 to move LEFT" << endl;
+                cout << endl << endl;
+                cin >> menuInputTest;
+                onlyNumbers = requireNumbers(menuInputTest);
+                gameMenu = atoi(menuInputTest.c_str());
+                cout << endl;
             }
+
+
 
 
 

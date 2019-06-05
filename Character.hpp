@@ -17,10 +17,11 @@ class Character
 {
 private:
     int health;
+    int itemCount;
 
 public:
     Character();
-    void setHealth();
+    void setHealth(int input);
     int getHealth();
     void printHealth();
 };

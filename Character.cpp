@@ -9,12 +9,13 @@
 
 
 /*********************************************************************
-** Description:   Constructor function for the 
+** Description:   Constructor function for the Character class
 *********************************************************************/
 
 Character::Character()
 {
     health = 10;
+    itemCount = 0;
 }
 
 
@@ -24,7 +25,7 @@ Character::Character()
 
 void Character::printHealth()
 {
-    cout << "      Cheese-O-Meter" << endl;
+    cout << "    Cheese-O-Meter" << endl;
     cout << "-----------------------" << endl;
     cout << "| ";
     
@@ -53,4 +54,9 @@ void Character::printHealth()
 int Character::getHealth()
 {
     return health;
+}
+
+void Character::setHealth(int input)
+{
+    health = input;
 }

@@ -6,7 +6,14 @@
 ***********************************************************************/
 
 #ifndef SPACE_HPP
-#define SPACE_HPP  
+#define SPACE_HPP
+
+#include <iostream>
+
+using std::cout;
+using std::endl;
+using std::string;
+
 
 class Space
 {
