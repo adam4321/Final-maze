@@ -8,15 +8,20 @@
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP  
 
+#include <iostream>
+
+using std::cout;
+using std::endl;
+
 class Character
 {
+private:
+    int health;
+
 public:
     Character();
     void setHealth();
     int getHealth();
     void printHealth();
-
-protected:
-    int health;
 };
 #endif

@@ -8,14 +8,16 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
+#include <vector>
 
-#include "Character.hpp"
 #include "Space.hpp"
+#include "Character.hpp"
 
 using std::cout;
 using std::cin;
 using std::endl;
 using std::string;
+using std::vector;
 
 bool requireNumbers(string menuInputTest);
 
@@ -29,15 +31,42 @@ int main()
 
     do
     {
+        Character player;
+
     	// Do While loop to allow restarting 
 
-        onlyNumbers = false;
+        /*********************************************************************
+        ** Description:   Rat ascii art from 
+        **        https://asciiart.website/index.php?art=animals/rodents/other
+        *********************************************************************/
+        
 
-        cout << endl << endl;
-        cout << "***************************************" << endl;
-        cout << "Maze Game" << endl;
-        cout << "***************************************";
-        cout << endl << endl;
+        cout << R"(
+    ######################################################################
+    #         __             _,-"~^"-.                                   #
+    #       _// )      _,-"~`         `.                                 #
+    #     ." ( /`"-,-"`                 ;                                #
+    #    / 6                             ;                               #
+    #   /           ,             ,-"     ;                              #
+    #  (,__.--.      \           /        ;                              #
+    #   //'   /`-.\   |          |        `._________                    #
+    #     _.-'_/`  )  )--...,,,___\     \-----------,)                   #
+    #   ((("~` _.-'.-'           __`-.   )         //                    #
+    #     jgs ((("`             (((---~"`         //                     #
+    #                                            ((________________      #
+    #                                            `----""""~~~~^^^```     #
+    ######################################################################
+        )";
+
+
+        cout << R"(
+                          **********************
+                          **  The Rat's Maze  **
+                          **********************
+                               ***********
+                                   ***
+                                    *
+        )";
 
         // Print the menu each time through the loop
 
@@ -45,7 +74,8 @@ int main()
 
 		while (onlyNumbers == false || menuChoice != 1 && menuChoice != 2)
 		{
-			cout << "Press 1 to enter the Maze" << endl;
+            cout << endl << endl;
+			cout << "Press 1 to Enter the Maze" << endl;
             cout << "Press 2 to Exit";
  			cout << endl << endl;
 			cin >> menuInputTest;
@@ -64,30 +94,30 @@ int main()
             return 0;
         } 
 
-        // Select 1 to run buffer function
+        // Select 1 to run begin the game
 
         if (menuChoice == 1)
         {
-            Character player;
 
-            cout << " ---------------------" << endl;
-            cout << "| * * * * * * * * * * |" << endl;
-            cout << " ---------------------" << endl << endl;
 
-            onlyNumbers = false;
 
-            while (onlyNumbers == false || gameMenu != 1 && gameMenu != 2
-                                        && gameMenu != 3 && gameMenu != 4)
-            {
-                cout << "Press 1 to move UP" << endl;
-                cout << "Press 2 to move RIGHT" << endl;
-                cout << "Press 3 to move DOWN" << endl;
-                cout << "Press 4 to move LEFT" << endl;
-                cout << endl << endl;
-                cin >> menuInputTest;
-			    onlyNumbers = requireNumbers(menuInputTest);
-			    gameMenu = atoi(menuInputTest.c_str());
-                cout << endl;
+
+        player.printHealth();
+
+        onlyNumbers = false;
+        gameMenu = 0;
+
+        while (onlyNumbers == false || gameMenu != 1 && gameMenu != 2 && gameMenu != 3 && gameMenu != 4)
+        {
+            cout << "Press 1 to move UP" << endl;
+            cout << "Press 2 to move RIGHT" << endl;
+            cout << "Press 3 to move DOWN" << endl;
+            cout << "Press 4 to move LEFT" << endl;
+            cout << endl << endl;
+            cin >> menuInputTest;
+            onlyNumbers = requireNumbers(menuInputTest);
+            gameMenu = atoi(menuInputTest.c_str());
+            cout << endl;
             }
 
 
