@@ -14,14 +14,19 @@
 #include <stdlib.h>
 #include <vector>
 
-#include "Space.hpp"
 #include "Character.hpp"
+#include "Space.hpp"
+#include "Start.hpp"
+#include "Dinosaur.hpp"
+#include "Key.hpp"
+#include "Cheese.hpp"
+#include "Door.hpp"
+#include "Finish.hpp"
 
 using std::cout;
 using std::cin;
 using std::endl;
 using std::string;
-using std::vector;
 
 bool requireNumbers(string menuInputTest);
 
@@ -38,7 +43,14 @@ int main()
 
     do
     {
+        Space *start = new Start();
+        Space *dinosaur = new Dinosaur();
+        Space *cheese = new Cheese();
+        Space *key = new Key();
+        Space *door = new Door();
+        Space *finish = new Finish();
         Character player;
+        
 
         /*********************************************************************
         ** Description:   Rat ascii art from 
@@ -72,6 +84,7 @@ int main()
                                     *
         )";
 
+
         // Print the menu each time through the loop
 
         onlyNumbers = false;
@@ -88,6 +101,7 @@ int main()
             cout << endl;
         }
 
+
         // Select 2 to exit
 
         if (menuChoice == 2)
@@ -95,8 +109,18 @@ int main()
             cout << "Maze Game Quitting  --  Goodbye!";
             cout << endl << endl;
 
+            // free the heap memory
+
+            delete start;
+            delete cheese;
+            delete key;
+            delete dinosaur;
+            delete door;
+            delete finish;
+
             return 0;
         } 
+
 
         // Select 1 to run begin the game
 
@@ -115,6 +139,7 @@ int main()
 
             // Print the "cheese" health meter and first menu
 
+            start->printImg();
             player.printHealth();
 
             onlyNumbers = false;
@@ -133,10 +158,23 @@ int main()
                 cout << endl;
             }
 
+            cheese->printImg();
+            player.printHealth();
+
+            key->printImg();
+            dinosaur->printImg();
+            door->printImg();
+            finish->printImg();
 
 
+            // free the heap memory
 
-
+            delete start;
+            delete cheese;
+            delete key;
+            delete dinosaur;
+            delete door;
+            delete finish;
         }
 
     } while (true);

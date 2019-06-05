@@ -12,14 +12,17 @@
 ** Description:   Constructor function for the Dinosaur class
 *********************************************************************/
 
-
+Key::Key()
+{
+    
+}
 
 /*********************************************************************
 ** Description:   Function that prints the image for the Key Room.
-**                http://ascii.co.uk/art/key
+**                ascii art from http://ascii.co.uk/art/key
 *********************************************************************/
 
-void printImg()
+void Key::printImg()
 {
 
 

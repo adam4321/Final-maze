@@ -17,7 +17,12 @@ using std::string;
 
 class Space
 {
-private:
+protected:
+    Space *up;
+    Space *right;
+    Space *down;
+    Space *left;
+    string room;
 
 public:
     Space();

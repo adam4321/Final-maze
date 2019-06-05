@@ -5,8 +5,8 @@
 ** Description:    Header file for the Key class derived from space
 ***********************************************************************/
 
-#ifndef START_HPP
-#define START_HPP  
+#ifndef KEY_HPP
+#define KEY_HPP  
 
 #include "Space.hpp"
 
@@ -18,6 +18,6 @@ private:
 
 public:
     Key();
-    void printImg();
+    void printImg() override;
 };
 #endif

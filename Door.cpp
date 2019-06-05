@@ -12,11 +12,15 @@
 ** Description:   Constructor function for the Door class
 *********************************************************************/
 
+Door::Door()
+{
+
+}
 
 
 /*********************************************************************
 ** Description:   Function that prints the image for the Dinosaur class
-**                https://www.asciiart.eu/art-and-design/mazes
+**          ascii art from https://www.asciiart.eu/art-and-design/mazes
 *********************************************************************/
 
 void Door::printImg()

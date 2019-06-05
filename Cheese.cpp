@@ -12,11 +12,15 @@
 ** Description:   Constructor function for the Dinosaur class
 *********************************************************************/
 
+Cheese::Cheese()
+{
+
+}
 
 
 /*********************************************************************
 ** Description:   Function that prints the image for the Dinosaur class
-**                http://ascii.co.uk/art/cheese
+**                ascii art from http://ascii.co.uk/art/cheese
 *********************************************************************/
 
 void Cheese::printImg()

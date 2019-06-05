@@ -16,7 +16,7 @@ Start.o: Start.cpp Start.hpp
 
 Dinosaur.o: Dinosaur.cpp Dinosaur.hpp
 	g++ -std=c++11 -c Dinosaur.cpp
-
+	
 Key.o: Key.cpp Key.hpp
 	g++ -std=c++11 -c Key.cpp
 
