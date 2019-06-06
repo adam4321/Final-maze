@@ -46,6 +46,7 @@ int main()
         Space *current;
         Character player;
         bool finished = false;
+        bool key = false;
         bool wall = true;
         int roomNum = 1;
 
@@ -72,6 +73,56 @@ int main()
         seven->setDirections(NULL, eight, five, NULL);
         eight->setDirections(NULL, NULL, six, seven);
         nine->setDirections(NULL, NULL, NULL, NULL);
+
+        // Set the maps for these rooms
+
+        one->setMap(R"(_______
+|_|_|F|
+|_|_|
+|_|_|
+|X|_|)");
+
+        two->setMap(R"(_______
+|_|_|F|
+|_|_|
+|_|_|
+|S|X|)");
+
+        three->setMap(R"(_______
+|_|_|F|
+|_|_|
+|X|_|
+|S|_|)");
+
+        four->setMap(R"(_______
+|_|_|F|
+|_|_|
+|_|X|
+|S|_|)");
+
+        five->setMap(R"(_______
+|_|_|F|
+|X|_|
+|_|_|
+|S|_|)");
+
+        six->setMap(R"(_______
+|_|_|F|
+|_|X|
+|_|_|
+|S|_|)");
+
+        seven->setMap(R"(_______
+|X|_|F|
+|_|_|
+|_|_|
+|S|_|)");
+
+        eight->setMap(R"(_______
+|_|X|F|
+|_|_|
+|_|_|
+|S|_|)");
 
 
         /*********************************************************************
@@ -193,6 +244,7 @@ int main()
                 while (wall == true && player.getHealth() > 0)
                 {
                     player.printHealth();
+                    current->printMap();
 
                     onlyNumbers = false;
 

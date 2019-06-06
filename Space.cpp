@@ -16,6 +16,18 @@ Space::Space() {}
 
 
 /*********************************************************************
+** Description:   Method that prints the map associated with the room
+*********************************************************************/
+
+void Space::printMap()
+{
+    cout << " MAP" << endl;
+    cout << map;
+    cout << endl << endl << endl;
+}
+
+
+/*********************************************************************
 ** Description:   Getter and setter functions for Space 
 *********************************************************************/
 
@@ -50,4 +62,14 @@ Space *Space::getLeft()
 bool Space::getFinish()
 {
     return finished;
+}
+
+bool Space::getKey()
+{
+    return key;
+}
+
+void Space::setMap(string input)
+{
+    map = input;
 }
