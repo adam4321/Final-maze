@@ -23,7 +23,6 @@ protected:
     Space *right;
     Space *down;
     Space *left;
-    string room;
     bool finished = false;
 
 public:
@@ -34,7 +33,6 @@ public:
     virtual Space *getDown();
     virtual Space *getLeft();
     virtual bool getFinish();
-    virtual string getRoom();
     virtual void printImg() = 0;
 };
 #endif

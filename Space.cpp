@@ -27,11 +27,6 @@ void Space::setDirections(Space *U, Space *R, Space *D, Space *L)
     left = L;
 }
 
-string Space::getRoom()
-{
-    return room;
-}
-
 Space * Space::getUp()
 {
     return up;

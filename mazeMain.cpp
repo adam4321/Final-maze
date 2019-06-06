@@ -43,22 +43,36 @@ int main()
 
     do
     {
-        Space *one = new Start();
-        Space *two = new Dinosaur();
-        Space *three = new Cheese();
-        Space *four = new Key();
-        Space *five = new Door();
-        Space *six = new Finish();
-
-        one->setDirections(two, four, NULL, NULL);
-        two->setDirections(six, NULL, NULL, NULL);
-
         Space *current;
         Character player;
         bool finished = false;
         bool wall = true;
         int roomNum = 1;
-        
+
+        // Create rooms
+
+        Space *one = new Start();
+        Space *two = new Key();
+        Space *three = new Cheese();
+        Space *four = new Cheese();
+        Space *five = new Dinosaur();
+        Space *six = new Cheese();
+        Space *seven = new Key();
+        Space *eight = new Door();
+        Space *nine = new Finish();
+
+        // Set the paths between rooms
+
+        one->setDirections(three, two, NULL, NULL);
+        two->setDirections(four, NULL, NULL, one);
+        three->setDirections(five, four, one, NULL);
+        four->setDirections(six, NULL, two, three);
+        five->setDirections(seven, six, three, NULL);
+        six->setDirections(eight, NULL, four, five);
+        seven->setDirections(NULL, eight, five, NULL);
+        eight->setDirections(NULL, NULL, six, seven);
+        nine->setDirections(NULL, NULL, NULL, NULL);
+
 
         /*********************************************************************
         ** Description:   Rat ascii art from 
@@ -93,7 +107,7 @@ int main()
         )";
 
 
-        // Print the menu each time through the loop
+        // Game Start Menu
 
         onlyNumbers = false;
 
@@ -110,7 +124,7 @@ int main()
         }
 
 
-        // Select 2 to exit
+        // Select 2 to Exit
 
         if (menuChoice == 2)
         {
@@ -125,12 +139,15 @@ int main()
             delete four;
             delete five;
             delete six;
+            delete seven;
+            delete eight;
+            delete nine;
 
             return 0;
-        } 
+        }
 
 
-        // Select 1 to run begin the game
+        // Select 1 to run Begin the Game
 
         if (menuChoice == 1)
         {
@@ -152,7 +169,6 @@ int main()
             cout << endl << endl;
 
             char temp = 'x';
-
             cin.clear();
             cin.ignore();
 
@@ -193,12 +209,14 @@ int main()
                         cout << endl;
                     }
 
+
                     // Check if the move is a wall or else move the player
 
                     if (gameMenu == 1)
                     {
                         if (current->getUp() == NULL)
                         {
+                            cout << endl << endl;
                             cout << "Sorry that is a wall..." << endl;
                             cout << "Try again.";
                             cout << endl << endl;
@@ -207,9 +225,7 @@ int main()
                         else
                         {
                             wall = false;
-                            roomNum = 6;
                             current = current->getUp();
-                            
                         }
 
                         finished = current->getFinish();
@@ -220,6 +236,7 @@ int main()
                     {
                         if (current->getRight() == NULL)
                         {
+                            cout << endl << endl;
                             cout << "Sorry that is a wall..." << endl;
                             cout << "Try again.";
                             cout << endl << endl;
@@ -228,7 +245,6 @@ int main()
                         else
                         {
                             wall = false;
-                            roomNum = 6;
                             current = current->getRight();
                         }
 
@@ -240,6 +256,7 @@ int main()
                     {
                         if (current->getDown() == NULL)
                         {
+                            cout << endl << endl;
                             cout << "Sorry that is a wall..." << endl;
                             cout << "Try again.";
                             cout << endl << endl;
@@ -248,7 +265,6 @@ int main()
                         else
                         {
                             wall = false;
-                            roomNum = 6;
                             current = current->getDown();
                         }
 
@@ -260,6 +276,7 @@ int main()
                     {
                         if (current->getLeft() == NULL)
                         {
+                            cout << endl << endl;
                             cout << "Sorry that is a wall..." << endl;
                             cout << "Try again.";
                             cout << endl << endl;
@@ -268,7 +285,6 @@ int main()
                         else
                         {
                             wall = false;
-                            roomNum = 6;
                             current = current->getLeft();
                         }
 
@@ -292,7 +308,6 @@ int main()
                 cout << endl << endl;
 
                 char temp = 'x';
-
                 cin.clear();
                 cin.ignore();
 
@@ -306,8 +321,11 @@ int main()
             
             else
             {
+                /*********************************************************************
+                ** Description:   Death ascii art from http://ascii.co.uk/art/death    
+                *********************************************************************/
 
-    cout << R"(
+                cout << R"(
 
                            ...
                          ;::::;
@@ -338,7 +356,6 @@ int main()
 )";
 
                 char temp = 'x';
-
                 cin.clear();
                 cin.ignore();
 
@@ -351,19 +368,6 @@ int main()
             }
             
 
-            // two->printImg();
-            // player.printHealth();
-
-            // three->printImg();
-            // player.printHealth();
-            
-            // four->printImg();
-            // player.printHealth();
-
-            // five->printImg();
-            // player.printHealth();
-
-
             // free the heap memory
 
             delete one;
@@ -372,6 +376,9 @@ int main()
             delete four;
             delete five;
             delete six;
+            delete seven;
+            delete eight;
+            delete nine;
         }
 
     } while (true);

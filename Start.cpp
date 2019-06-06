@@ -15,7 +15,7 @@
 Start::Start() : Space()
 {
 
-    room = "Start";
+   
 }
 
 

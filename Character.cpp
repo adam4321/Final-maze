@@ -16,6 +16,7 @@ Character::Character()
 {
     health = 10;
     itemCount = 0;
+    hasKey = false;
 }
 
 
@@ -59,4 +60,9 @@ int Character::getHealth()
 void Character::setHealth(int input)
 {
     health = input;
+}
+
+bool Character::getKey()
+{
+    return hasKey;
 }
