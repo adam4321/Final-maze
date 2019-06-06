@@ -16,7 +16,7 @@ Character::Character()
 {
     health = 10;
     itemCount = 0;
-    hasKey = false;
+    key = false;
 }
 
 
@@ -26,7 +26,7 @@ Character::Character()
 
 void Character::printHealth()
 {
-    cout << "    Cheese-O-Meter" << endl;
+    cout << "    Cheese-o-Meter" << endl;
     cout << "-----------------------" << endl;
     cout << "| ";
     
@@ -45,6 +45,27 @@ void Character::printHealth()
     
     cout << "|" << endl;
     cout << "-----------------------" << endl << endl;
+}
+
+/*********************************************************************
+** Description:   Function that adds an item if the inventory is at 3
+**                items or below. It takes a string for the item type
+**                as it's argument.
+*********************************************************************/
+
+void Character::addItem(string input)
+{
+    if(itemCount < 4)
+    {
+        items.push_back(input);
+        itemCount++;
+    }
+
+    else
+    {
+        cout << "Sorry your intentory is full";
+        cout << endl << endl;
+    }  
 }
 
 
@@ -67,12 +88,17 @@ int Character::getItemCount()
     return itemCount;
 }
 
-void Character::addItem(string input)
+void Character::setKey(bool input)
 {
-    items.push_back(input);
+    key = input;
 }
 
 vector<string> Character::getItems()
 {
     return items;
+}
+
+bool Character::hasKey()
+{
+    return key;
 }

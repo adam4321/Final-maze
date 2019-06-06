@@ -10,6 +10,8 @@
 
 #include <iostream>
 
+#include "Character.hpp"
+
 using std::cout;
 using std::cin;
 using std::endl;
@@ -39,5 +41,6 @@ public:
     virtual void printImg() = 0;
     virtual void setMap(string input);
     virtual void printMap();
+    virtual void action(Character &player) = 0;
 };
 #endif

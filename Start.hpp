@@ -16,5 +16,6 @@ class Start : public Space
 public:
     Start();
     void printImg() override;
+    void action(Character &player) override;
 };
 #endif

@@ -245,6 +245,7 @@ int main()
                 {
                     player.printHealth();
                     current->printMap();
+                    current->action(player);
 
                     onlyNumbers = false;
 
@@ -343,6 +344,11 @@ int main()
                         finished = current->getFinish();
                         player.setHealth(player.getHealth() - 1);
                     }
+
+                    if (player.hasKey() == true)
+                    {
+                        eight->setDirections(NULL, nine, six, seven);
+                    }
                 }
             }
 
@@ -351,7 +357,7 @@ int main()
 
             if (finished == true)
             {
-                six->printImg();
+                current->printImg();
 
                 cout << "Congratulations You have escaped the maze..." << endl;
                 cout << "You are a lucky rat!";

@@ -39,3 +39,28 @@ void Key::printImg()
 
 )";
 }
+
+
+/*********************************************************************
+** Description:   Method that runs the room's action
+*********************************************************************/
+
+void Key::action(Character &player)
+{
+    cout << "You have found a key";
+    cout << endl << endl;
+    cout << "Press enter to add the key to your inventory";
+    cout << endl << endl;
+
+    char temp = 'x';
+    cin.clear();
+    cin.ignore();
+
+    while (temp != '\n')
+    {
+        cin.get(temp);
+    }
+
+    player.addItem("key");
+    player.setKey(true);
+}

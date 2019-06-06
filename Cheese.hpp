@@ -13,11 +13,9 @@
 
 class Cheese : public Space
 {
-private:
-
-
 public:
     Cheese();
     void printImg() override;
+    void action(Character &player) override;
 };
 #endif

@@ -21,7 +21,7 @@ class Character
 private:
     int health;
     int itemCount;
-    bool hasKey;
+    bool key;
     vector<string> items;
 
 public:
@@ -31,6 +31,8 @@ public:
     void printHealth();
     int getItemCount();
     void addItem(string input);
+    void setKey(bool input);
+    bool hasKey();
     vector<string> getItems();
 };
 #endif

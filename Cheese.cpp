@@ -12,10 +12,7 @@
 ** Description:   Constructor function for the Dinosaur class
 *********************************************************************/
 
-Cheese::Cheese()
-{
-
-}
+Cheese::Cheese() {}
 
 
 /*********************************************************************
@@ -46,4 +43,27 @@ cout << R"(
 
                       
 )";
+}
+
+/*********************************************************************
+** Description:   Method that runs the room's action
+*********************************************************************/
+
+void Cheese::action(Character &player)
+{
+      cout << "You have found a piece of cheese";
+      cout << endl << endl;
+      cout << "Press enter to add it to your Cheese-o-Meter";
+      cout << endl << endl;
+      
+      char temp = 'x';
+      cin.clear();
+      cin.ignore();
+
+      while (temp != '\n')
+      {
+            cin.get(temp);
+      }
+
+      player.setHealth(player.getHealth() + 1);
 }

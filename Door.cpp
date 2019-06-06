@@ -51,3 +51,13 @@ void Door::printImg()
                          Do you have the key???
 )";
 }
+
+
+/*********************************************************************
+** Description:   Method that runs the room's action
+*********************************************************************/
+
+void Door::action(Character &player)
+{
+
+}

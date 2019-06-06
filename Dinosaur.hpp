@@ -19,5 +19,6 @@ private:
 public:
     Dinosaur();
     void printImg() override;
+    void action(Character &player) override;
 };
 #endif
