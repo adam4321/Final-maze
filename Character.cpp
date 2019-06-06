@@ -62,7 +62,17 @@ void Character::setHealth(int input)
     health = input;
 }
 
-bool Character::getKey()
+int Character::getItemCount()
 {
-    return hasKey;
+    return itemCount;
+}
+
+void Character::addItem(string input)
+{
+    items.push_back(input);
+}
+
+vector<string> Character::getItems()
+{
+    return items;
 }

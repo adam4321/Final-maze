@@ -29,6 +29,8 @@ public:
     void setHealth(int input);
     int getHealth();
     void printHealth();
-    bool getKey();
+    int getItemCount();
+    void addItem(string input);
+    vector<string> getItems();
 };
 #endif

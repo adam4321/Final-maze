@@ -271,7 +271,7 @@ int main()
                             cout << endl << endl;
                             cout << "Sorry that is a wall..." << endl;
                             cout << "Try again.";
-                            cout << endl << endl;
+                            cout << endl << endl << endl;
                         }
 
                         else
@@ -291,7 +291,7 @@ int main()
                             cout << endl << endl;
                             cout << "Sorry that is a wall..." << endl;
                             cout << "Try again.";
-                            cout << endl << endl;
+                            cout << endl << endl << endl;
                         }
 
                         else
@@ -311,7 +311,7 @@ int main()
                             cout << endl << endl;
                             cout << "Sorry that is a wall..." << endl;
                             cout << "Try again.";
-                            cout << endl << endl;
+                            cout << endl << endl << endl;
                         }
 
                         else
@@ -331,7 +331,7 @@ int main()
                             cout << endl << endl;
                             cout << "Sorry that is a wall..." << endl;
                             cout << "Try again.";
-                            cout << endl << endl;
+                            cout << endl << endl << endl;
                         }
 
                         else

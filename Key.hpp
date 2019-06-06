@@ -13,9 +13,6 @@
 
 class Key : public Space
 {
-private:
-
-
 public:
     Key();
     void printImg() override;

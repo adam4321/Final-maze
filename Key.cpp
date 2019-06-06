@@ -9,13 +9,14 @@
 
 
 /*********************************************************************
-** Description:   Constructor function for the Dinosaur class
+** Description:   Constructor function for the Key class
 *********************************************************************/
 
 Key::Key()
 {
     key = true;
 }
+
 
 /*********************************************************************
 ** Description:   Function that prints the image for the Key Room.
@@ -24,10 +25,8 @@ Key::Key()
 
 void Key::printImg()
 {
+    cout << R"(
 
-
-
-cout << R"(
 
 
 

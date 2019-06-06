@@ -13,9 +13,6 @@
 
 class Door : public Space
 {
-private:
-
-
 public:
     Door();
     void printImg() override;

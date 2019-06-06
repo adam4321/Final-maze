@@ -12,8 +12,7 @@
 
 
 class Start : public Space
-{
-    
+{ 
 public:
     Start();
     void printImg() override;

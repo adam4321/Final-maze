@@ -13,9 +13,6 @@
 
 class Finish : public Space
 {
-private:
-
-
 public:
     Finish();
     void printImg() override;
