@@ -43,13 +43,20 @@ int main()
 
     do
     {
-        Space *start = new Start();
-        Space *dinosaur = new Dinosaur();
-        Space *cheese = new Cheese();
-        Space *key = new Key();
-        Space *door = new Door();
-        Space *finish = new Finish();
+        Space *one = new Start();
+        Space *two = new Dinosaur();
+        Space *three = new Cheese();
+        Space *four = new Key();
+        Space *five = new Door();
+        Space *six = new Finish();
+
+        one->setDirections(six, NULL, NULL, NULL);
+
+        Space *current;
         Character player;
+        bool finished = false;
+        bool wall = true;
+        int roomNum = 1;
         
 
         /*********************************************************************
@@ -68,7 +75,7 @@ int main()
     #   //'   /`-.\   |          |        `._________                    #
     #     _.-'_/`  )  )--...,,,___\     \-----------,)                   #
     #   ((("~` _.-'.-'           __`-.   )         //                    #
-    #     jgs ((("`             (((---~"`         //                     #
+    #         ((("`             (((---~"`         //                     #
     #                                            ((________________      #
     #                                            `----""""~~~~^^^```     #
     ######################################################################
@@ -111,12 +118,12 @@ int main()
 
             // free the heap memory
 
-            delete start;
-            delete cheese;
-            delete key;
-            delete dinosaur;
-            delete door;
-            delete finish;
+            delete one;
+            delete two;
+            delete three;
+            delete four;
+            delete five;
+            delete six;
 
             return 0;
         } 
@@ -134,54 +141,182 @@ int main()
             cout << endl << endl << endl;
             cout << "Your goal is to move from room to room and escape" << endl;
             cout << "before your Cheese-O-Meter runs out and you die...";
+            cout << endl << endl;
+            cout << "You loose a piece of cheese for each move" << endl;
+            cout << "and you need to find a key to escape...";
             cout << endl << endl << endl;
 
 
-            // Print the "cheese" health meter and first menu
+            cout << "Press enter to Begin";
+            cout << endl << endl;
 
-            start->printImg();
-            player.printHealth();
+            char temp = 'x';
 
-            onlyNumbers = false;
-            gameMenu = 0;
+            cin.clear();
+            cin.ignore();
 
-            while (onlyNumbers == false || gameMenu != 1 && gameMenu != 2 && gameMenu != 3 && gameMenu != 4)
+            while (temp != '\n')
             {
-                cout << "Press 1 to move UP" << endl;
-                cout << "Press 2 to move RIGHT" << endl;
-                cout << "Press 3 to move DOWN" << endl;
-                cout << "Press 4 to move LEFT" << endl;
-                cout << endl << endl;
-                cin >> menuInputTest;
-                onlyNumbers = requireNumbers(menuInputTest);
-                gameMenu = atoi(menuInputTest.c_str());
-                cout << endl;
+                cin.get(temp);
             }
 
-            cheese->printImg();
-            player.printHealth();
 
-            key->printImg();
-            player.printHealth();
+            // Set the current room to one to start the game
+
+            current = one;
+
+
+            // Game loop that runs until the player wins or dies
+
+            while (player.getHealth() > 0 && finished == false)
+            {
+                wall = true;
+                current->printImg();
+
+                while (wall == true)
+                {
+                    player.printHealth();
+
+                    onlyNumbers = false;
+
+                    while (onlyNumbers == false || gameMenu != 1 && gameMenu != 2 && gameMenu != 3 && gameMenu != 4)
+                    {
+                        cout << "Press 1 to move UP" << endl;
+                        cout << "Press 2 to move RIGHT" << endl;
+                        cout << "Press 3 to move DOWN" << endl;
+                        cout << "Press 4 to move LEFT" << endl;
+                        cout << endl << endl;
+                        cin >> menuInputTest;
+                        onlyNumbers = requireNumbers(menuInputTest);
+                        gameMenu = atoi(menuInputTest.c_str());
+                        cout << endl;
+                    }
+
+                    // Check if the move is a wall or move the player
+
+                    if (gameMenu == 1)
+                    {
+                        if (current->getUp() == NULL)
+                        {
+                            cout << "Sorry that is a wall..." << endl;
+                            cout << "Try again.";
+                            cout << endl << endl;
+                        }
+
+                        else
+                        {
+                            wall = false;
+                            roomNum = 6;
+                            current = current->getUp();
+                            
+                        }
+
+                        finished = current->getFinish();
+                        player.setHealth(player.getHealth() - 1);
+                    }
+
+                    else if (gameMenu == 2)
+                    {
+                        if (current->getRight() == NULL)
+                        {
+                            cout << "Sorry that is a wall..." << endl;
+                            cout << "Try again.";
+                            cout << endl << endl;
+                        }
+
+                        else
+                        {
+                            wall = false;
+                            roomNum = 6;
+                            current = current->getRight();
+                        }
+
+                        finished = current->getFinish();
+                        player.setHealth(player.getHealth() - 1);
+                    }
+
+                    else if (gameMenu == 3)
+                    {
+                        if (current->getDown() == NULL)
+                        {
+                            cout << "Sorry that is a wall..." << endl;
+                            cout << "Try again.";
+                            cout << endl << endl;
+                        }
+
+                        else
+                        {
+                            wall = false;
+                            roomNum = 6;
+                            current = current->getDown();
+                        }
+
+                        finished = current->getFinish();
+                        player.setHealth(player.getHealth() - 1);
+                    }
+
+                    else if (gameMenu == 4)
+                    {
+                        if (current->getLeft() == NULL)
+                        {
+                            cout << "Sorry that is a wall..." << endl;
+                            cout << "Try again.";
+                            cout << endl << endl;
+                        }
+
+                        else
+                        {
+                            wall = false;
+                            roomNum = 6;
+                            current = current->getLeft();
+                        }
+
+                        finished = current->getFinish();
+                        player.setHealth(player.getHealth() - 1);
+                    }
+                }
+            }
+
+
+            //Check the state at the end and print a win or a death
+
+            if (finished == true)
+            {
+                six->printImg();
+            }
             
-            dinosaur->printImg();
-            player.printHealth();
+            else
+            {
+                cout << "I'm sorry but you've died" << endl;
+            }
+            
 
-            door->printImg();
-            player.printHealth();
+            // two->printImg();
+            // player.printHealth();
 
-            finish->printImg();
-            player.printHealth();
+            // three->printImg();
+            // player.printHealth();
+            
+            // four->printImg();
+            // player.printHealth();
+
+            // five->printImg();
+            // player.printHealth();
+
+
+
+
+
 
 
             // free the heap memory
 
-            delete start;
-            delete cheese;
-            delete key;
-            delete dinosaur;
-            delete door;
-            delete finish;
+            delete one;
+            delete two;
+            delete three;
+            delete four;
+            delete five;
+            delete six;
         }
 
     } while (true);

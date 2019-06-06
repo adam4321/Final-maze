@@ -12,10 +12,10 @@
 ** Description:   Constructor function for the 
 *********************************************************************/
 
-Start::Start()
+Start::Start() : Space()
 {
 
-
+    room = "Start";
 }
 
 

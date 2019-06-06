@@ -9,15 +9,19 @@
 #define CHARACTER_HPP  
 
 #include <iostream>
+#include <vector>
 
 using std::cout;
 using std::endl;
+using std::string;
+using std::vector;
 
 class Character
 {
 private:
     int health;
     int itemCount;
+    vector<string> items;
 
 public:
     Character();

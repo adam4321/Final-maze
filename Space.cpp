@@ -9,10 +9,50 @@
 
 
 /*********************************************************************
-** Description:   Constructor function for the 
+** Description:   Constructor function for the Space base class
 *********************************************************************/
 
-Space::Space()
+Space::Space() {}
+
+
+/*********************************************************************
+** Description:   Getter and setter functions for Space 
+*********************************************************************/
+
+void Space::setDirections(Space *U, Space *R, Space *D, Space *L)
 {
-    
+    up = U;
+    right = R;
+    down = D;
+    left = L;
+}
+
+string Space::getRoom()
+{
+    return room;
+}
+
+Space * Space::getUp()
+{
+    return up;
+}
+
+Space *Space::getRight()
+{
+    return right;
+}
+
+Space *Space::getDown()
+{
+    return down;
+}
+
+Space *Space::getLeft()
+{
+    return left;
+}
+
+bool Space::getFinish()
+{
+    return finished;
 }

@@ -29,7 +29,7 @@ void Character::printHealth()
     cout << "-----------------------" << endl;
     cout << "| ";
     
-    for (auto i = 0; i < health; i++)
+    for (auto i = 0; i < 10; i++)
     {
         if (i < health)
         {

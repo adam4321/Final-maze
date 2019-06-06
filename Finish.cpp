@@ -14,7 +14,7 @@
 
 Finish::Finish()
 {
-
+    finished = true;
 }
 
 
@@ -47,4 +47,18 @@ cout << R"(
 
 
 )";
+
+    cout << "Congratulations You have escaped the maze. You are a lucky rat!" << endl;
+    cout << "Press enter to finish";
+    cout << endl << endl;
+
+    char temp = 'x';
+
+    cin.clear();
+    cin.ignore();
+
+    while (temp != '\n')
+    {
+        cin.get(temp);
+    }
 }
