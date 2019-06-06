@@ -50,7 +50,8 @@ int main()
         Space *five = new Door();
         Space *six = new Finish();
 
-        one->setDirections(six, NULL, NULL, NULL);
+        one->setDirections(two, four, NULL, NULL);
+        two->setDirections(six, NULL, NULL, NULL);
 
         Space *current;
         Character player;
@@ -168,12 +169,12 @@ int main()
 
             // Game loop that runs until the player wins or dies
 
-            while (player.getHealth() > 0 && finished == false)
+            while (finished == false && player.getHealth() > 0)
             {
                 wall = true;
                 current->printImg();
 
-                while (wall == true)
+                while (wall == true && player.getHealth() > 0)
                 {
                     player.printHealth();
 
@@ -192,7 +193,7 @@ int main()
                         cout << endl;
                     }
 
-                    // Check if the move is a wall or move the player
+                    // Check if the move is a wall or else move the player
 
                     if (gameMenu == 1)
                     {
@@ -283,11 +284,70 @@ int main()
             if (finished == true)
             {
                 six->printImg();
+
+                cout << "Congratulations You have escaped the maze..." << endl;
+                cout << "You are a lucky rat!";
+                cout << endl << endl;
+                cout << "Press enter to finish";
+                cout << endl << endl;
+
+                char temp = 'x';
+
+                cin.clear();
+                cin.ignore();
+
+                while (temp != '\n')
+                {
+                    cin.get(temp);
+                }
+
+                cout << endl << endl << endl << endl << endl << endl;
             }
             
             else
             {
-                cout << "I'm sorry but you've died" << endl;
+
+    cout << R"(
+
+                           ...
+                         ;::::;
+                       ;::::; :;
+                     ;:::::'   :;
+                    ;:::::;     ;.
+                   ,:::::'       ;           OOO\
+                   ::::::;       ;          OOOOO\
+                   ;:::::;       ;         OOOOOOOO
+                  ,;::::::;     ;'         / OOOOOOO
+                ;:::::::::`. ,,,;.        /  / DOOOOOO
+              .';:::::::::::::::::;,     /  /     DOOOO
+             ,::::::;::::::;;;;::::;,   /  /        DOOO
+            ;`::::::`'::::::;;;::::: ,#/  /          DOOO
+            :`:::::::`;::::::;;::: ;::#  /            DOOO
+            ::`:::::::`;:::::::: ;::::# /              DOO
+            `:`:::::::`;:::::: ;::::::#/               DOO
+             :::`:::::::`;; ;:::::::::##                OO
+             ::::`:::::::`;::::::::;:::#                OO
+             `:::::`::::::::::::;'`:;::#                O
+              `:::::`::::::::;' /  / `:#
+               ::::::`:::::;'  /  /   `#
+
+
+              I'm sorry but you've died
+                        --- 
+               Press enter to Try again
+)";
+
+                char temp = 'x';
+
+                cin.clear();
+                cin.ignore();
+
+                while (temp != '\n')
+                {
+                    cin.get(temp);
+                }
+
+                cout << endl << endl << endl << endl << endl << endl;
             }
             
 
@@ -302,11 +362,6 @@ int main()
 
             // five->printImg();
             // player.printHealth();
-
-
-
-
-
 
 
             // free the heap memory
