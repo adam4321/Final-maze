@@ -56,7 +56,7 @@ int main()
         Space *one = new Start();
         Space *two = new Key();
         Space *three = new Cheese();
-        Space *four = new Cheese();
+        Space *four = new Empty();
         Space *five = new Dinosaur();
         Space *six = new Cheese();
         Space *seven = new Key();

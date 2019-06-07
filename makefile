@@ -1,6 +1,6 @@
 
-maze: mazeMain.o Space.o Character.o Start.o Dinosaur.o Key.o Cheese.o Door.o Finish.o
-	g++ -std=c++11 mazeMain.o Space.o Character.o Start.o Dinosaur.o Key.o Cheese.o Door.o Finish.o -g -o maze
+maze: mazeMain.o Space.o Empty.o Character.o Start.o Dinosaur.o Key.o Cheese.o Door.o Finish.o
+	g++ -std=c++11 mazeMain.o Space.o Empty.o Character.o Start.o Dinosaur.o Key.o Cheese.o Door.o Finish.o -g -o maze
 
 mazeMain.o: mazeMain.cpp
 	g++ -std=c++11 -c mazeMain.cpp
@@ -13,6 +13,9 @@ Space.o: Space.cpp Space.hpp
 
 Start.o: Start.cpp Start.hpp
 	g++ -std=c++11 -c Start.cpp
+
+Empty.o: Empty.cpp Empty.hpp
+	g++ -std=c++11 -c Empty.cpp
 
 Dinosaur.o: Dinosaur.cpp Dinosaur.hpp
 	g++ -std=c++11 -c Dinosaur.cpp
