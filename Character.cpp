@@ -15,8 +15,9 @@
 Character::Character()
 {
     health = 10;
-    itemCount = 0;
+    itemCount = 1;
     key = false;
+    stickCount = 0;
 }
 
 
@@ -69,6 +70,16 @@ void Character::addItem(string input)
     }  
 }
 
+/*********************************************************************
+** Description:   Method that removes items in inventory
+*********************************************************************/
+
+void Character::removeItem(string input)
+{
+    auto itr = find(items.begin(), items.end(), input);
+    if (itr != items.end()) items.erase(itr);
+}
+
 
 /*********************************************************************
 ** Description:   Method that prints the current items in inventory
@@ -106,6 +117,11 @@ int Character::getItemCount()
     return itemCount;
 }
 
+void Character::setItemCount(int input)
+{
+    itemCount = input;
+}
+
 void Character::setKey(bool input)
 {
     key = input;
@@ -116,12 +132,12 @@ bool Character::hasKey()
     return key;
 }
 
-void Character::setStick(bool input)
+void Character::setStickCount(int input)
 {
-    stick = input;
+    stickCount = input;
 }
 
-bool Character::hasStick()
+int Character::getStickCount()
 {
-    return stick;
+    return stickCount;
 }

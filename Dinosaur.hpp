@@ -13,11 +13,8 @@
 
 class Dinosaur : public Space
 {
-private:
-
-
 public:
-    Dinosaur();
+    Dinosaur() {};
     void printImg() override;
     void action(Character &player) override;
 };

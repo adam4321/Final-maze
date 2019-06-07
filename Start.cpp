@@ -57,6 +57,7 @@ cout << R"(
 )";
 }
 
+
 /*********************************************************************
 ** Description:   Method that runs the room's action
 *********************************************************************/
@@ -70,8 +71,6 @@ void Start::action(Character &player)
     cout << endl << endl;
 
     char temp = 'x';
-    cin.clear();
-    cin.ignore();
 
     while (temp != '\n')
     {
@@ -79,5 +78,5 @@ void Start::action(Character &player)
     }
 
     player.addItem("stick");
-    player.setStick(true);
+    player.setStickCount(player.getStickCount() + 1);
 }

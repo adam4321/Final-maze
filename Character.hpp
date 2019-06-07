@@ -10,11 +10,13 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using std::cout;
 using std::endl;
 using std::string;
 using std::vector;
+using std::find;
 
 class Character
 {
@@ -22,7 +24,7 @@ private:
     int health;
     int itemCount;
     bool key;
-    bool stick;
+    int stickCount;
     vector<string> items;
 
 public:
@@ -31,11 +33,13 @@ public:
     int getHealth();
     void printHealth();
     int getItemCount();
+    void setItemCount(int input);
     void addItem(string input);
+    void removeItem(string input);
     void printItems();
     void setKey(bool input);
     bool hasKey();
-    void setStick(bool input);
-    bool hasStick();
+    int getStickCount();
+    void setStickCount(int input);
 };
 #endif
