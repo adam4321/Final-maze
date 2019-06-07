@@ -27,6 +27,7 @@ protected:
     Space *left;
     bool finished = false;
     bool key = false;
+    bool stick = false;
     string map;
 
 public:
@@ -37,7 +38,6 @@ public:
     virtual Space *getDown();
     virtual Space *getLeft();
     virtual bool getFinish();
-    virtual bool getKey();
     virtual void setMap(string input);
     virtual void printMap();
     virtual void printImg() = 0;

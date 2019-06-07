@@ -115,3 +115,13 @@ bool Character::hasKey()
 {
     return key;
 }
+
+void Character::setStick(bool input)
+{
+    stick = input;
+}
+
+bool Character::hasStick()
+{
+    return stick;
+}

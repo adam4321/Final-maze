@@ -12,7 +12,10 @@
 ** Description:   Constructor function for the Start class
 *********************************************************************/
 
-Start::Start() {}
+Start::Start() 
+{
+    stick = true;
+}
 
 
 /*********************************************************************
@@ -60,5 +63,21 @@ cout << R"(
 
 void Start::action(Character &player)
 {
+    cout << "You have found a stick" << endl;
+    cout << "It could be helpful later...";
+    cout << endl << endl;
+    cout << "Press enter to add the stick to your inventory";
+    cout << endl << endl;
 
+    char temp = 'x';
+    cin.clear();
+    cin.ignore();
+
+    while (temp != '\n')
+    {
+        cin.get(temp);
+    }
+
+    player.addItem("stick");
+    player.setStick(true);
 }

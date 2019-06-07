@@ -22,6 +22,7 @@ private:
     int health;
     int itemCount;
     bool key;
+    bool stick;
     vector<string> items;
 
 public:
@@ -31,8 +32,10 @@ public:
     void printHealth();
     int getItemCount();
     void addItem(string input);
+    void printItems();
     void setKey(bool input);
     bool hasKey();
-    void printItems();
+    void setStick(bool input);
+    bool hasStick();
 };
 #endif

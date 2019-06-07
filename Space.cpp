@@ -8,13 +8,6 @@
 #include "Space.hpp"
 
 
-// /*********************************************************************
-// ** Description:   Constructor function for the Space base class
-// *********************************************************************/
-
-// Space::Space() {}
-
-
 /*********************************************************************
 ** Description:   Method that prints the map associated with the room
 *********************************************************************/
@@ -62,11 +55,6 @@ Space *Space::getLeft()
 bool Space::getFinish()
 {
     return finished;
-}
-
-bool Space::getKey()
-{
-    return key;
 }
 
 void Space::setMap(string input)
