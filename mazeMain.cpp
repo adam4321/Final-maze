@@ -17,6 +17,7 @@
 #include "Character.hpp"
 #include "Space.hpp"
 #include "Start.hpp"
+#include "Empty.hpp"
 #include "Dinosaur.hpp"
 #include "Key.hpp"
 #include "Cheese.hpp"
@@ -131,7 +132,7 @@ int main()
         *********************************************************************/
 
         cout << R"(
-            
+
     ######################################################################
     #         __             _,-"~^"-.                                   #
     #       _// )      _,-"~`         `.                                 #

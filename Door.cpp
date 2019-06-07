@@ -9,13 +9,6 @@
 
 
 /*********************************************************************
-** Description:   Constructor function for the Door class
-*********************************************************************/
-
-Door::Door() {}
-
-
-/*********************************************************************
 ** Description:   Function that prints the image for the Dinosaur class
 **          ascii art from https://www.asciiart.eu/art-and-design/mazes
 *********************************************************************/
@@ -46,9 +39,6 @@ void Door::printImg()
    88  _.'     !'|   .' | /                       \|  `  |  `.    |`.|  88
    88888888888888888888888888888888888888888888888888888888888888888888888
 
-                    You have reached the final door...
-
-                         Do you have the key???
 )";
 }
 
@@ -59,5 +49,20 @@ void Door::printImg()
 
 void Door::action(Character &player)
 {
+    cout << "You have reached the final door...";
+    cout << endl << endl;
 
+    if (player.hasKey() == true)
+    {
+        cout << "You have a key!";
+        cout << endl << endl;
+        cout << "Move to the F to Finish";
+    }
+
+    else
+    {
+        cout << "You must find a key before you can escape!";
+    }
+    
+    cout << endl << endl << endl;
 }

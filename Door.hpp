@@ -14,7 +14,7 @@
 class Door : public Space
 {
 public:
-    Door();
+    Door() {};
     void printImg() override;
     void action(Character &player) override;
 };
