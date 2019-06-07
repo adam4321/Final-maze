@@ -54,76 +54,141 @@ int main()
         // Create rooms
 
         Space *one = new Start();
-        Space *two = new Key();
+        Space *two = new Dinosaur();
         Space *three = new Cheese();
-        Space *four = new Empty();
+        Space *four = new Cheese();
         Space *five = new Dinosaur();
         Space *six = new Cheese();
-        Space *seven = new Key();
-        Space *eight = new Door();
-        Space *nine = new Finish();
+        Space *seven = new Empty();
+        Space *eight = new Dinosaur();
+        Space *nine = new Cheese();
+        Space *ten = new Key();
+        Space *eleven = new Key();
+        Space *twelve = new Empty();
+        Space *thirteen = new Door();
+        Space *fourteen = new Finish();
 
         // Set the paths between rooms
 
         one->setDirections(three, two, NULL, NULL);
-        two->setDirections(four, NULL, NULL, one);
+        two->setDirections(four, ten, NULL, one);
         three->setDirections(five, four, one, NULL);
         four->setDirections(six, NULL, two, three);
         five->setDirections(seven, six, three, NULL);
         six->setDirections(eight, NULL, four, five);
-        seven->setDirections(NULL, eight, five, NULL);
-        eight->setDirections(NULL, NULL, six, seven);
-        nine->setDirections(NULL, NULL, NULL, NULL);
+        seven->setDirections(eleven, eight, five, NULL);
+        eight->setDirections(twelve, nine, six, seven);
+        nine->setDirections(thirteen, NULL, NULL, eight);
+        ten->setDirections(NULL, NULL, NULL, two);
+        eleven->setDirections(NULL, twelve, seven, NULL);
+        twelve->setDirections(NULL, thirteen, eight, eleven);
+        thirteen->setDirections(NULL, NULL, nine, twelve);
+        fourteen->setDirections(NULL, NULL, NULL, NULL);
 
         // Set the maps for these rooms
 
-        one->setMap(R"(_______
-|_|_|F|
-|_|_|
-|_|_|
-|X|_|)");
+        /*********************************************************************
+        ** Description:   Set the Map Rooms using this layout
+        **                      
+        **                 _____________
+        **                 |11|12|13|14|   <= Finish
+        **                 |7_|8_|9_|
+        **                 |5_|6_|
+        **                 |3_|4_|__
+        **        Start => |1_|2_|10|
+        **                 
+        *********************************************************************/
 
-        two->setMap(R"(_______
-|_|_|F|
+        one->setMap(R"(_________
+|_|_|_|F|
+|_|_|_|
 |_|_|
-|_|_|
-|S|X|)");
+|_|_|_
+|X|_|_|)");
 
-        three->setMap(R"(_______
-|_|_|F|
+        two->setMap(R"(_________
+|_|_|_|F|
+|_|_|_|
 |_|_|
+|_|_|_
+|S|X|_|)");
+
+        three->setMap(R"(_________
+|_|_|_|F|
+|_|_|_|
+|_|_|
+|X|_|_
+|S|_|_|)");
+
+        four->setMap(R"(_________
+|_|_|_|F|
+|_|_|_|
+|_|_|
+|_|X|_
+|S|_|_|)");
+
+        five->setMap(R"(_________
+|_|_|_|F|
+|_|_|_|
 |X|_|
-|S|_|)");
+|_|_|_
+|S|_|_|)");
 
-        four->setMap(R"(_______
-|_|_|F|
-|_|_|
+        six->setMap(R"(_________
+|_|_|_|F|
+|_|_|_|
 |_|X|
-|S|_|)");
+|_|_|_
+|S|_|_|)");
 
-        five->setMap(R"(_______
-|_|_|F|
-|X|_|
+        seven->setMap(R"(_________
+|_|_|_|F|
+|X|_|_|
 |_|_|
-|S|_|)");
+|_|_|_
+|S|_|_|)");
 
-        six->setMap(R"(_______
-|_|_|F|
-|_|X|
+        eight->setMap(R"(_________
+|_|_|_|F|
+|_|X|_|
 |_|_|
-|S|_|)");
+|_|_|_
+|S|_|_|)");
 
-        seven->setMap(R"(_______
-|X|_|F|
+        nine->setMap(R"(_________
+|_|_|_|F|
+|_|_|X|
 |_|_|
-|_|_|
-|S|_|)");
+|_|_|_
+|S|_|_|)");
 
-        eight->setMap(R"(_______
-|_|X|F|
+        ten->setMap(R"(_________
+|_|_|_|F|
+|_|_|_|
 |_|_|
+|_|_|_
+|S|_|X|)");
+
+        eleven->setMap(R"(_________
+|X|_|_|F|
+|_|_|_|
 |_|_|
-|S|_|)");
+|_|_|_
+|S|_|_|)");
+
+        twelve->setMap(R"(_________
+|_|X|_|F|
+|_|_|_|
+|_|_|
+|_|_|_
+|S|_|_|)");
+
+        thirteen->setMap(R"(_________
+|_|_|X|F|
+|_|_|_|
+|_|_|
+|_|_|_
+|S|_|_|)");
 
 
         /*********************************************************************
@@ -195,6 +260,11 @@ int main()
             delete seven;
             delete eight;
             delete nine;
+            delete ten;
+            delete eleven;
+            delete twelve;
+            delete thirteen;
+            delete fourteen;
 
             return 0;
         }
@@ -350,7 +420,7 @@ int main()
 
                     if (player.hasKey() == true)
                     {
-                        eight->setDirections(NULL, nine, six, seven);
+                        thirteen->setDirections(NULL, fourteen, nine, twelve);
                     }
                 }
             }
@@ -440,6 +510,11 @@ int main()
             delete seven;
             delete eight;
             delete nine;
+            delete ten;
+            delete eleven;
+            delete twelve;
+            delete thirteen;
+            delete fourteen;
         }
 
     } while (true);
