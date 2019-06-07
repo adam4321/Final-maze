@@ -47,8 +47,9 @@ void Character::printHealth()
     cout << "-----------------------" << endl << endl;
 }
 
+
 /*********************************************************************
-** Description:   Function that adds an item if the inventory is at 3
+** Description:   Method that adds an item if the inventory is at 3
 **                items or below. It takes a string for the item type
 **                as it's argument.
 *********************************************************************/
@@ -66,6 +67,23 @@ void Character::addItem(string input)
         cout << "Sorry your intentory is full";
         cout << endl << endl;
     }  
+}
+
+
+/*********************************************************************
+** Description:   Method that prints the current items in inventory
+*********************************************************************/
+
+void Character::printItems()
+{
+    cout << "Inventory: ";
+
+    for (vector<string>::const_iterator i = items.begin(); i != items.end(); ++i)
+    {
+        cout << *i << ' ';
+    }
+
+    cout << endl << endl;
 }
 
 
@@ -91,11 +109,6 @@ int Character::getItemCount()
 void Character::setKey(bool input)
 {
     key = input;
-}
-
-vector<string> Character::getItems()
-{
-    return items;
 }
 
 bool Character::hasKey()

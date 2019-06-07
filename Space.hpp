@@ -30,7 +30,7 @@ protected:
     string map;
 
 public:
-    Space();
+    Space() {};
     virtual void setDirections(Space *U, Space *L, Space *R, Space *D);
     virtual Space *getUp();
     virtual Space *getRight();
@@ -38,9 +38,9 @@ public:
     virtual Space *getLeft();
     virtual bool getFinish();
     virtual bool getKey();
-    virtual void printImg() = 0;
     virtual void setMap(string input);
     virtual void printMap();
+    virtual void printImg() = 0;
     virtual void action(Character &player) = 0;
 };
 #endif

@@ -244,6 +244,7 @@ int main()
                 while (wall == true && player.getHealth() > 0)
                 {
                     player.printHealth();
+                    player.printItems();
                     current->printMap();
                     current->action(player);
 

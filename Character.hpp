@@ -33,6 +33,6 @@ public:
     void addItem(string input);
     void setKey(bool input);
     bool hasKey();
-    vector<string> getItems();
+    void printItems();
 };
 #endif
