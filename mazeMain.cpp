@@ -291,15 +291,15 @@ int main()
             cout << "Press enter to Begin";
             cout << endl << endl;
 
-            char temp = 'x';
+            char temp1 = 'x';
             cin.clear();
             cin.ignore();
 
-            while (temp != '\n')
+            while (temp1 != '\n')
             {
-                cin.get(temp);
+                cin.get(temp1);
             }
-
+            
 
             // Set the current room to one to start the game
 

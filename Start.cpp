@@ -73,6 +73,8 @@ void Start::action(Character &player)
     player.setStickCount(player.getStickCount() + 1);
 
     char temp = 'x';
+    cin.clear();
+    cin.ignore();
 
     while (temp != '\n')
     {

@@ -78,6 +78,7 @@ void Character::removeItem(string input)
 {
     auto itr = find(items.begin(), items.end(), input);
     if (itr != items.end()) items.erase(itr);
+    itemCount--;
 }
 
 
