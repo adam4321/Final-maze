@@ -52,6 +52,9 @@ void Key::action(Character &player)
     cout << "Press enter to add the key to your inventory";
     cout << endl << endl;
 
+    player.addItem("key");
+    player.setKey(true);
+
     char temp = 'x';
     cin.clear();
     cin.ignore();
@@ -60,7 +63,4 @@ void Key::action(Character &player)
     {
         cin.get(temp);
     }
-
-    player.addItem("key");
-    player.setKey(true);
 }
