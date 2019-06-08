@@ -54,15 +54,24 @@ void Door::action(Character &player)
 
     if (player.hasKey() == true)
     {
-        cout << "You have a key!";
+        cout << "You have a key!  Press enter to unlock the door...";
         cout << endl << endl;
-        cout << "Move to the F to Finish";
+        cout << "Then move into the room to escape";
     }
 
     else
     {
-        cout << "You must find a key before you can escape!";
+        cout << "Press enter and go find a key before you can escape!";
     }
     
     cout << endl << endl << endl;
+
+    char temp = 'x';
+    cin.clear();
+    cin.ignore();
+
+    while (temp != '\n')
+    {
+        cin.get(temp);
+    }
 }
