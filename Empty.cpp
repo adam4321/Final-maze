@@ -42,8 +42,17 @@ void Empty::printImg()
 
 void Empty::action(Character &player)
 {
-    cout << "This room is empty...";
+    cout << "This room is empty...Nothing to see here...";
     cout << endl << endl;
-    cout << "Nothing to see here...";
+    cout << "Press enter to move along";
     cout << endl << endl << endl;
+
+    char temp = 'x';
+    cin.clear();
+    cin.ignore();
+
+    while (temp != '\n')
+    {
+        cin.get(temp);
+    }
 }

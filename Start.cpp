@@ -25,8 +25,7 @@ Start::Start()
 
 void Start::printImg()
 {
-
-cout << R"(
+    cout << R"(
 +------------------------------------+ 
 |#####|WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW| 
 |#####|<(       HOME ROOM          )>| 
@@ -70,13 +69,13 @@ void Start::action(Character &player)
     cout << "Press enter to add the stick to your inventory";
     cout << endl << endl;
 
+    player.addItem("stick");
+    player.setStickCount(player.getStickCount() + 1);
+
     char temp = 'x';
 
     while (temp != '\n')
     {
         cin.get(temp);
     }
-
-    player.addItem("stick");
-    player.setStickCount(player.getStickCount() + 1);
 }

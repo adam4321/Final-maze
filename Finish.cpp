@@ -25,8 +25,7 @@ Finish::Finish()
 
 void Finish::printImg()
 {
-
-cout << R"(   
+    cout << R"(   
 
                            *********************
                            ** !!! FREEDOM !!! **
