@@ -56,6 +56,7 @@ void Dinosaur::action(Character &player)
 {
     cout << "OH NO!!!   Its a DINOSAUR!!!";
 
+
     if (player.getStickCount() > 0)
     {
         cout << endl << endl;
@@ -64,6 +65,16 @@ void Dinosaur::action(Character &player)
 
         player.removeItem("stick");
         player.setStickCount(player.getStickCount() - 1);
+    }
+
+    else if (player.getHealth() < 4)
+    {
+        cout << endl << endl;
+        cout << "I'm afraid that the you've been killed!" << endl;
+        cout << "                  --" << endl;
+        cout << "       Press Enter to Try again";
+        cout << endl << endl;
+        player.setHealth(player.getHealth() - 3);
     }
 
     else

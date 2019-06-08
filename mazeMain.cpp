@@ -50,6 +50,7 @@ int main()
         bool key = false;
         bool wall = true;
         bool hitWall = false;
+        bool dinoDeath = false;
         int roomNum = 1;
 
         // Create rooms
@@ -319,121 +320,129 @@ int main()
                     if (hitWall == false)
                     {
                         current->action(player);
-                    }
 
-                    player.printHealth();
-                    player.printItems();
-                    current->printMap();
-
-                    onlyNumbers = false;
-
-                    while (onlyNumbers == false || gameMenu != 1 && gameMenu != 2 && gameMenu != 3 && gameMenu != 4)
-                    {
-                        cout << "Press 1 to move UP" << endl;
-                        cout << "Press 2 to move RIGHT" << endl;
-                        cout << "Press 3 to move DOWN" << endl;
-                        cout << "Press 4 to move LEFT" << endl;
-                        cout << endl << endl;
-                        cin >> menuInputTest;
-                        onlyNumbers = requireNumbers(menuInputTest);
-                        gameMenu = atoi(menuInputTest.c_str());
-                        cout << endl;
-                    }
-
-
-                    // Check if the move is a wall or else move the player
-
-                    if (gameMenu == 1)
-                    {
-                        if (current->getUp() == NULL)
+                        if (player.getHealth() < 1)
                         {
+                            dinoDeath = true;
+                        }
+                    }
+
+                    if (dinoDeath == false)
+                    {
+                        player.printHealth();
+                        player.printItems();
+                        current->printMap();
+
+                        onlyNumbers = false;
+
+                        while (onlyNumbers == false || gameMenu != 1 && gameMenu != 2 && gameMenu != 3 && gameMenu != 4)
+                        {
+                            cout << "Press 1 to move UP" << endl;
+                            cout << "Press 2 to move RIGHT" << endl;
+                            cout << "Press 3 to move DOWN" << endl;
+                            cout << "Press 4 to move LEFT" << endl;
                             cout << endl << endl;
-                            cout << "Sorry that is a wall..." << endl;
-                            cout << "Try again.";
-                            cout << endl << endl << endl;
-                            hitWall = true;
+                            cin >> menuInputTest;
+                            onlyNumbers = requireNumbers(menuInputTest);
+                            gameMenu = atoi(menuInputTest.c_str());
+                            cout << endl;
                         }
 
-                        else
+
+                        // Check if the move is a wall or else move the player
+
+                        if (gameMenu == 1)
                         {
-                            wall = false;
-                            hitWall = false;
-                            current = current->getUp();
+                            if (current->getUp() == NULL)
+                            {
+                                cout << endl << endl;
+                                cout << "Sorry that is a wall..." << endl;
+                                cout << "Try again.";
+                                cout << endl << endl << endl;
+                                hitWall = true;
+                            }
+
+                            else
+                            {
+                                wall = false;
+                                hitWall = false;
+                                current = current->getUp();
+                            }
+
+                            finished = current->getFinish();
+                            player.setHealth(player.getHealth() - 1);
                         }
 
-                        finished = current->getFinish();
-                        player.setHealth(player.getHealth() - 1);
-                    }
-
-                    else if (gameMenu == 2)
-                    {
-                        if (current->getRight() == NULL)
+                        else if (gameMenu == 2)
                         {
-                            cout << endl << endl;
-                            cout << "Sorry that is a wall..." << endl;
-                            cout << "Try again.";
-                            cout << endl << endl << endl;
-                            hitWall = true;
+                            if (current->getRight() == NULL)
+                            {
+                                cout << endl << endl;
+                                cout << "Sorry that is a wall..." << endl;
+                                cout << "Try again.";
+                                cout << endl << endl << endl;
+                                hitWall = true;
+                            }
+
+                            else
+                            {
+                                wall = false;
+                                hitWall = false;
+                                current = current->getRight();
+                            }
+
+                            finished = current->getFinish();
+                            player.setHealth(player.getHealth() - 1);
                         }
 
-                        else
+                        else if (gameMenu == 3)
                         {
-                            wall = false;
-                            hitWall = false;
-                            current = current->getRight();
+                            if (current->getDown() == NULL)
+                            {
+                                cout << endl << endl;
+                                cout << "Sorry that is a wall..." << endl;
+                                cout << "Try again.";
+                                cout << endl << endl << endl;
+                                hitWall = true;
+                            }
+
+                            else
+                            {
+                                wall = false;
+                                hitWall = false;
+                                current = current->getDown();
+                            }
+
+                            finished = current->getFinish();
+                            player.setHealth(player.getHealth() - 1);
                         }
 
-                        finished = current->getFinish();
-                        player.setHealth(player.getHealth() - 1);
-                    }
-
-                    else if (gameMenu == 3)
-                    {
-                        if (current->getDown() == NULL)
+                        else if (gameMenu == 4)
                         {
-                            cout << endl << endl;
-                            cout << "Sorry that is a wall..." << endl;
-                            cout << "Try again.";
-                            cout << endl << endl << endl;
-                            hitWall = true;
+                            if (current->getLeft() == NULL)
+                            {
+                                cout << endl << endl;
+                                cout << "Sorry that is a wall..." << endl;
+                                cout << "Try again.";
+                                cout << endl << endl << endl;
+                                hitWall = true;
+                            }
+
+                            else
+                            {
+                                wall = false;
+                                hitWall = false;
+                                current = current->getLeft();
+                            }
+
+                            finished = current->getFinish();
+                            player.setHealth(player.getHealth() - 1);
                         }
 
-                        else
+                        if (player.hasKey() == true)
                         {
-                            wall = false;
-                            hitWall = false;
-                            current = current->getDown();
+                            thirteen->setDirections(NULL, fourteen, nine, twelve);
                         }
-
-                        finished = current->getFinish();
-                        player.setHealth(player.getHealth() - 1);
-                    }
-
-                    else if (gameMenu == 4)
-                    {
-                        if (current->getLeft() == NULL)
-                        {
-                            cout << endl << endl;
-                            cout << "Sorry that is a wall..." << endl;
-                            cout << "Try again.";
-                            cout << endl << endl << endl;
-                            hitWall = true;
-                        }
-
-                        else
-                        {
-                            wall = false;
-                            hitWall = false;
-                            current = current->getLeft();
-                        }
-
-                        finished = current->getFinish();
-                        player.setHealth(player.getHealth() - 1);
-                    }
-
-                    if (player.hasKey() == true)
-                    {
-                        thirteen->setDirections(NULL, fourteen, nine, twelve);
                     }
                 }
             }
@@ -465,11 +474,14 @@ int main()
             
             else
             {
-                /*********************************************************************
-                ** Description:   Death ascii art from http://ascii.co.uk/art/death    
-                *********************************************************************/
+                if (dinoDeath == false)
+                {
 
-                cout << R"(
+                    /*********************************************************************
+                    ** Description:   Death ascii art from http://ascii.co.uk/art/death    
+                    *********************************************************************/
+
+                    cout << R"(
 
                            ...
                          ;::::;
@@ -499,15 +511,16 @@ int main()
                Press enter to Try again
 )";
 
-                char temp = 'x';
-                cin.clear();
-                cin.ignore();
+                    char temp = 'x';
+                    cin.clear();
+                    cin.ignore();
 
-                while (temp != '\n')
-                {
-                    cin.get(temp);
+                    while (temp != '\n')
+                    {
+                        cin.get(temp);
+                    }
                 }
-
+                
                 cout << endl << endl << endl << endl << endl << endl;
             }
             
