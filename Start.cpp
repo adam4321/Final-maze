@@ -73,11 +73,17 @@ void Start::action(Character &player)
     player.setStickCount(player.getStickCount() + 1);
 
     char temp = 'x';
-    cin.clear();
-    cin.ignore();
+    
+    if (visits > 0)
+    {
+        cin.clear();
+        cin.ignore();
+    }
 
     while (temp != '\n')
     {
         cin.get(temp);
     }
+
+    visits++;
 }

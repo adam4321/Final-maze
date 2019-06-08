@@ -12,7 +12,9 @@
 
 
 class Start : public Space
-{ 
+{
+private:
+    int visits = 0;
 public:
     Start();
     void printImg() override;
