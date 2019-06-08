@@ -69,7 +69,7 @@ void Dinosaur::action(Character &player)
 
     else if (player.getHealth() < 4)
     {
-        cout << endl << endl;
+        cout << endl << endl << endl;
         cout << "I'm afraid that the you've been killed!" << endl;
         cout << "                  --" << endl;
         cout << "       Press Enter to Try again";
