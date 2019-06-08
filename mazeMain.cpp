@@ -49,6 +49,7 @@ int main()
         bool finished = false;
         bool key = false;
         bool wall = true;
+        bool hitWall = false;
         int roomNum = 1;
 
         // Create rooms
@@ -315,7 +316,11 @@ int main()
 
                 while (wall == true && player.getHealth() > 0)
                 {
-                    current->action(player);
+                    if (hitWall == false)
+                    {
+                        current->action(player);
+                    }
+
                     player.printHealth();
                     player.printItems();
                     current->printMap();
@@ -346,11 +351,13 @@ int main()
                             cout << "Sorry that is a wall..." << endl;
                             cout << "Try again.";
                             cout << endl << endl << endl;
+                            hitWall = true;
                         }
 
                         else
                         {
                             wall = false;
+                            hitWall = false;
                             current = current->getUp();
                         }
 
@@ -366,11 +373,13 @@ int main()
                             cout << "Sorry that is a wall..." << endl;
                             cout << "Try again.";
                             cout << endl << endl << endl;
+                            hitWall = true;
                         }
 
                         else
                         {
                             wall = false;
+                            hitWall = false;
                             current = current->getRight();
                         }
 
@@ -386,11 +395,13 @@ int main()
                             cout << "Sorry that is a wall..." << endl;
                             cout << "Try again.";
                             cout << endl << endl << endl;
+                            hitWall = true;
                         }
 
                         else
                         {
                             wall = false;
+                            hitWall = false;
                             current = current->getDown();
                         }
 
@@ -406,11 +417,13 @@ int main()
                             cout << "Sorry that is a wall..." << endl;
                             cout << "Try again.";
                             cout << endl << endl << endl;
+                            hitWall = true;
                         }
 
                         else
                         {
                             wall = false;
+                            hitWall = false;
                             current = current->getLeft();
                         }
 
