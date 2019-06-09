@@ -58,7 +58,7 @@ int main()
         Space *one = new Start();
         Space *two = new Dinosaur();
         Space *three = new Cheese();
-        Space *four = new Cheese();
+        Space *four = new Empty();
         Space *five = new Dinosaur();
         Space *six = new Cheese();
         Space *seven = new Empty();
@@ -520,7 +520,7 @@ int main()
                         cin.get(temp);
                     }
                 }
-                
+
                 cout << endl << endl << endl << endl << endl << endl;
             }
             
