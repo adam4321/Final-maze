@@ -8,11 +8,11 @@ A single player console game where the player navigates a maze. To win and exit 
 
 ## Starting Room
 
-![start](https://imgur.com/a/MAAnXXO)
+![start](https://i.imgur.com/q0DYyO8.png)
 
 ## Player screen for each round
 
-![map](https://imgur.com/a/vWvOMA2)
+![map](https://i.imgur.com/KVdJLJk.png)
 
 ## Dinosaur Room
 
