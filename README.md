@@ -25,8 +25,8 @@ A single player console game where the player navigates a maze. To win and exit 
 ## The door to the final room
 
 
-![final-door](https://imgur.com/a/weYZsa1)
+![final-door](https://i.imgur.com/aBR1rJD.png)
 
 ## The exit screen shown for a winning exit
 
-![exit](https://imgur.com/a/q4H8PLP)
+![exit](https://i.imgur.com/nzFgqkx.png)
