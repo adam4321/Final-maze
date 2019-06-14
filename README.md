@@ -4,7 +4,7 @@ A single player console game where the player navigates a maze. To win and exit 
 
 ##Intro Menu
 
-![Intro Menu](<blockquote class="imgur-embed-pub" lang="en" data-id="a/cy8fQ3s"><a href="//imgur.com/a/cy8fQ3s"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>)
+![Intro Menu]<blockquote class="imgur-embed-pub" lang="en" data-id="a/cy8fQ3s"><a href="//imgur.com/a/cy8fQ3s"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 ##Starting Room
 
