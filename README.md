@@ -16,11 +16,11 @@ A single player console game where the player navigates a maze. To win and exit 
 
 ## Dinosaur Room
 
-![dinosaur](https://imgur.com/a/XzfJGA3)
+![dinosaur](https://i.imgur.com/AMOVxMD.png)
 
 ## Player loss screen
 
-![death](https://imgur.com/a/M22Xzp3)
+![death](https://i.imgur.com/IzNEy0b.png)
 
 ## The door to the final room
 
