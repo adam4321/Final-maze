@@ -18,6 +18,7 @@ using std::string;
 using std::vector;
 using std::find;
 
+
 class Character
 {
 private:
@@ -26,7 +27,6 @@ private:
     bool key;
     int stickCount;
     vector<string> items;
-
 public:
     Character();
     void setHealth(int input);

@@ -7,11 +7,9 @@
 
 #include "Character.hpp"
 
-
 /*********************************************************************
 ** Description:   Constructor function for the Character class
 *********************************************************************/
-
 Character::Character()
 {
     health = 10;
@@ -20,11 +18,9 @@ Character::Character()
     stickCount = 0;
 }
 
-
 /*********************************************************************
 ** Description:   Method that prints the Character's health bar
 *********************************************************************/
-
 void Character::printHealth()
 {
     cout << "    Cheese-o-Meter" << endl;
@@ -48,13 +44,11 @@ void Character::printHealth()
     cout << "-----------------------" << endl << endl;
 }
 
-
 /*********************************************************************
 ** Description:   Method that adds an item if the inventory is at 3
 **                items or below. It takes a string for the item type
 **                as it's argument.
 *********************************************************************/
-
 void Character::addItem(string input)
 {
     if(itemCount < 4)
@@ -73,7 +67,6 @@ void Character::addItem(string input)
 /*********************************************************************
 ** Description:   Method that removes items in inventory
 *********************************************************************/
-
 void Character::removeItem(string input)
 {
     auto itr = find(items.begin(), items.end(), input);
@@ -81,11 +74,9 @@ void Character::removeItem(string input)
     itemCount--;
 }
 
-
 /*********************************************************************
 ** Description:   Method that prints the current items in inventory
 *********************************************************************/
-
 void Character::printItems()
 {
     cout << "Inventory: ";
@@ -98,11 +89,9 @@ void Character::printItems()
     cout << endl << endl;
 }
 
-
 /*********************************************************************
 ** Description:   Getters and setters for the Character class
 *********************************************************************/
-
 int Character::getHealth()
 {
     return health;

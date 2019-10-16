@@ -7,22 +7,18 @@
 
 #include "Start.hpp"
 
-
 /*********************************************************************
 ** Description:   Constructor function for the Start class
 *********************************************************************/
-
 Start::Start() 
 {
     stick = true;
 }
 
-
 /*********************************************************************
 ** Description:   Function that prints the image for the Finish class
 **                ascii art from http://ascii.co.uk/art/rooms
 *********************************************************************/
-
 void Start::printImg()
 {
     cout << R"(
@@ -56,11 +52,9 @@ void Start::printImg()
 )";
 }
 
-
 /*********************************************************************
 ** Description:   Method that runs the room's action
 *********************************************************************/
-
 void Start::action(Character &player)
 {
     cout << "You have found a stick" << endl;

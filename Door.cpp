@@ -7,12 +7,10 @@
 
 #include "Door.hpp"
 
-
 /*********************************************************************
 ** Description:   Function that prints the image for the Dinosaur class
 **          ascii art from https://www.asciiart.eu/art-and-design/mazes
 *********************************************************************/
-
 void Door::printImg()
 {
    cout << R"(
@@ -43,11 +41,9 @@ void Door::printImg()
 )";
 }
 
-
 /*********************************************************************
 ** Description:   Method that runs the room's action
 *********************************************************************/
-
 void Door::action(Character &player)
 {
     cout << "You have reached the final door...";
@@ -59,7 +55,6 @@ void Door::action(Character &player)
         cout << endl << endl;
         cout << "Then move into the room to escape";
     }
-
     else
     {
         cout << "Press enter and go find a key before you can escape!";

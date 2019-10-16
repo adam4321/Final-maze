@@ -7,12 +7,10 @@
 
 #include "Empty.hpp"
 
-
 /*********************************************************************
 ** Description:   Function that prints the image for the Dinosaur class
 **          ascii art from https://www.asciiart.eu/art-and-design/mazes
 *********************************************************************/
-
 void Empty::printImg()
 {
    cout << R"(
@@ -38,11 +36,9 @@ void Empty::printImg()
 )";
 }
 
-
 /*********************************************************************
 ** Description:   Method that runs the room's action
 *********************************************************************/
-
 void Empty::action(Character &player)
 {
     cout << "This room is empty...Nothing to see here...";

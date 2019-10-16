@@ -41,7 +41,6 @@ int main()
 
 
     // Do While loop to allow restarting 
-
     do
     {
         Space *current;
@@ -54,7 +53,6 @@ int main()
         int roomNum = 1;
 
         // Create rooms
-
         Space *one = new Start();
         Space *two = new Dinosaur();
         Space *three = new Cheese();
@@ -71,7 +69,6 @@ int main()
         Space *fourteen = new Finish();
 
         // Set the paths between rooms
-
         one->setDirections(three, two, NULL, NULL);
         two->setDirections(four, ten, NULL, one);
         three->setDirections(five, four, one, NULL);
@@ -228,7 +225,6 @@ int main()
 
 
         // Game Start Menu
-
         onlyNumbers = false;
 
 		while (onlyNumbers == false || menuChoice != 1 && menuChoice != 2)
@@ -245,14 +241,12 @@ int main()
 
 
         // Select 2 to Exit
-
         if (menuChoice == 2)
         {
             cout << "Maze Game Quitting  --  Goodbye!";
             cout << endl << endl;
 
             // free the heap memory
-
             delete one;
             delete two;
             delete three;
@@ -273,7 +267,6 @@ int main()
 
 
         // Select 1 to run Begin the Game
-
         if (menuChoice == 1)
         {
             cout << ".........................................................................." << endl;
@@ -304,12 +297,10 @@ int main()
             
 
             // Set the current room to one to start the game
-
             current = one;
 
 
             // Game loop that runs until the player wins or dies
-
             while (finished == false && player.getHealth() > 0)
             {
                 wall = true;
@@ -348,9 +339,7 @@ int main()
                             cout << endl;
                         }
 
-
                         // Check if the move is a wall or else move the player
-
                         if (gameMenu == 1)
                         {
                             if (current->getUp() == NULL)
@@ -361,7 +350,6 @@ int main()
                                 cout << endl << endl << endl;
                                 hitWall = true;
                             }
-
                             else
                             {
                                 wall = false;
@@ -383,7 +371,6 @@ int main()
                                 cout << endl << endl << endl;
                                 hitWall = true;
                             }
-
                             else
                             {
                                 wall = false;
@@ -405,7 +392,6 @@ int main()
                                 cout << endl << endl << endl;
                                 hitWall = true;
                             }
-
                             else
                             {
                                 wall = false;
@@ -427,7 +413,6 @@ int main()
                                 cout << endl << endl << endl;
                                 hitWall = true;
                             }
-
                             else
                             {
                                 wall = false;
@@ -449,7 +434,6 @@ int main()
 
 
             //Check the state at the end and print a win or a death
-
             if (finished == true)
             {
                 current->printImg();
@@ -526,7 +510,6 @@ int main()
             
 
             // free the heap memory
-
             delete one;
             delete two;
             delete three;
@@ -546,14 +529,12 @@ int main()
     } while (true);
 }
 
-
 /*********************************************************************
 ** Description:   Function to make sure that only integers are being
 **                passed and not characters or periods or spaces. It takes
 **                a string as input and returns true if it only contains
 **                the numbers 0 - 9.
 *********************************************************************/
-
 bool requireNumbers(string menuInputTest)
 {
 	return menuInputTest.find_first_not_of("0123456789") == string::npos;

@@ -7,22 +7,18 @@
 
 #include "Key.hpp"
 
-
 /*********************************************************************
 ** Description:   Constructor function for the Key class
 *********************************************************************/
-
 Key::Key()
 {
     key = true;
 }
 
-
 /*********************************************************************
 ** Description:   Function that prints the image for the Key Room.
 **                ascii art from http://ascii.co.uk/art/key
 *********************************************************************/
-
 void Key::printImg()
 {
     cout << R"(
@@ -40,11 +36,9 @@ void Key::printImg()
 )";
 }
 
-
 /*********************************************************************
 ** Description:   Method that runs the room's action
 *********************************************************************/
-
 void Key::action(Character &player)
 {
     cout << "You have found a key";

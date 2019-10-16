@@ -29,7 +29,6 @@ protected:
     bool key = false;
     bool stick = false;
     string map;
-
 public:
     Space() {};
     virtual void setDirections(Space *U, Space *L, Space *R, Space *D);

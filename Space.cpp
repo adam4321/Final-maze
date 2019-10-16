@@ -7,11 +7,9 @@
 
 #include "Space.hpp"
 
-
 /*********************************************************************
 ** Description:   Method that prints the map associated with the room
 *********************************************************************/
-
 void Space::printMap()
 {
     cout << " MAP" << endl;
@@ -19,11 +17,9 @@ void Space::printMap()
     cout << endl << endl << endl;
 }
 
-
 /*********************************************************************
 ** Description:   Getter and setter functions for Space 
 *********************************************************************/
-
 void Space::setDirections(Space *U, Space *R, Space *D, Space *L)
 {
     up = U;

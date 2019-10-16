@@ -7,12 +7,10 @@
 
 #include "Cheese.hpp"
 
-
 /*********************************************************************
 ** Description:   Function that prints the image for the Dinosaur class
 **                ascii art from http://ascii.co.uk/art/cheese
 *********************************************************************/
-
 void Cheese::printImg()
 {
     cout << R"(
@@ -35,11 +33,9 @@ void Cheese::printImg()
 )";
 }
 
-
 /*********************************************************************
 ** Description:   Method that runs the room's action
 *********************************************************************/
-
 void Cheese::action(Character &player)
 {
     cout << "You have found a piece of cheese";
