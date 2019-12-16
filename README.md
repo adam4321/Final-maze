@@ -1,4 +1,4 @@
-## Final-maze
+## Final project from spring term 2019 OSU CS-162 
 
 A single player console game where the player navigates a maze. To win and exit the maze the player needs to find a key and reach the final door. You can try the game by downloading the zip and unzipping it and typing make to create the executable. Then just type maze to start the game.
 
